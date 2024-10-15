@@ -13,7 +13,7 @@ public class Playroom {
   }
 
   public void addToy(Toy toy) throws Exception {
-    double totalCost = toys.stream().mapToDouble(Toy::price).sum();
+    double totalCost = toys.stream().mapToDouble(t -> t.price).sum();
     if (totalCost + toy.price > budget) {
       throw new Exception("Budget exceeded! Cannot add new Toy: " + toy.name + "\nCurrent budget: " + this.budget + "\n Money needed: " + totalCost + toy.price);
     }
@@ -21,10 +21,10 @@ public class Playroom {
   }
 
   public void sortToysByPrice() {
-    Collections.sort(toys, Comparator.comparingDouble(Toy::price));
+    Collections.sort(toys, Comparator.comparingDouble(t -> t.price));
   }
 
-  public List<Toy> findToysInPriceRange(double minPrice; double maxPrice) {
+  public List<Toy> findToysInPriceRange(double minPrice, double maxPrice) {
     List<Toy> foundToys = new ArrayList<Toy>();
     for (Toy toy : this.toys) {
       if (toy.price <= maxPrice && toy.price >= minPrice) {
@@ -34,7 +34,13 @@ public class Playroom {
     return foundToys;
   }
 
-  public void printToys(List<Toy> toys = this.toys) {
+  public void printToys() {
+    for (Toy toy : this.toys) {
+      System.out.println(toy);
+    }
+  }
+
+  public void printToys(List<Toy> toys) {
     for (Toy toy : toys) {
       System.out.println(toy);
     }

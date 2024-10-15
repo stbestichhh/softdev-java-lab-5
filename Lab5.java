@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Lab5 {
 
   public static void main(String[] args) {
@@ -13,6 +15,7 @@ public class Lab5 {
       System.out.println("Toys sorted by price:");
       playroom.sortToysByPrice();
       playroom.printToys();
+      System.out.println();
 
       System.out.println("Toys in budget between 15 and 25:");
       List<Toy> foundToys = playroom.findToysInPriceRange(15, 25);
