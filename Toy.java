@@ -1,0 +1,16 @@
+abstract class Toy {
+  public final String name;
+  public final int ageGroup;
+  public double price;
+
+  public Toy(String name, int ageGroup, double price) {
+    this.name = name;
+    this.ageGroup = ageGroup;
+    this.price = price;
+  }
+
+  @Override
+  public toString() {
+    return "Toy{ name: " + this.name + ", age group: " + this.ageGroup + ", price: " + this.price;
+  }
+}
