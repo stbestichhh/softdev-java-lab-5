@@ -10,5 +10,3 @@ $ javac Lab5.java
 ```shell
 $ java Lab5
 ```
-```
-```
